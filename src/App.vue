@@ -1,21 +1,23 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+
+    <Newsfeed />
   </div>
 </template>
 
 <script>
 import Vue from 'vue'
-import HelloWorld from "./components/HelloWorld.vue";
+// import HelloWorld from "./components/HelloWorld.vue";
 import SimpleWidget from "./widgets/SimpleWidget";
 import SimpleWidgetProps from "./widgets/SimpleWidgetProps";
+import Newsfeed from './components/Newsfeed';
 
 
 export default {
   name: "App",
   components: {
-    HelloWorld
+    // HelloWorld
+    Newsfeed
   },
   created: function() {
     
