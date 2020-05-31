@@ -8,8 +8,17 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@babel/runtime-corejs2": "^7.10.2",
+    "bulma": "^0.8.2",
     "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "jquery": "^3.5.1",
+    "node-sass": "^4.14.1",
+    "pug": "^3.0.0",
+    "pug-plain-loader": "^1.0.0",
+    "sass-loader": "^8.0.2",
+    "vue": "^2.6.11",
+    "vue-contentservice": "^0.1.90",
+    "vue-split-panel": "^1.0.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.4.0",

@@ -1,19 +1,55 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img alt="Vue logo" src="./assets/logo.png" />
+    <HelloWorld msg="Welcome to Your Vue.js App" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Vue from 'vue'
+import HelloWorld from "./components/HelloWorld.vue";
+import SimpleWidget from "./widgets/SimpleWidget";
+import SimpleWidgetProps from "./widgets/SimpleWidgetProps";
+
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     HelloWorld
+  },
+  created: function() {
+    
+    console.log('this', this);
+    console.log('this', Vue);
+    console.log('this.$content.knownElementTypes', this.$content.knownElementTypes)
+    this.$content.registerWidget(Vue, {
+      name: "simpleWidget",
+      label: "Simple Widget",
+      category: "",
+      iconClass: "fa-arrows-h", // This can be customised
+      iconClass5: "fas fa-arrows-alt-h", // This can be customised
+      dragtype: "component",
+
+      // Register native Vue templates
+      componentName: "content-simplewidget",
+      component: SimpleWidget,
+      propertyComponent: SimpleWidgetProps,
+
+      // Identical structure to a CUT or COPY from edit mode.
+      data: {
+        type: "contentservice.io",
+        version: "1.0",
+        source: "toolbox",
+        layout: {
+          type: "simpleWidget",
+          label: "Simple Widget",
+          children: []
+        }
+      }
+    });
+    
   }
-}
+};
 </script>
 
 <style>
