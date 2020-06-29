@@ -12,20 +12,20 @@
         // such as remove, copy, and download
         .c-layout-mode-heading
           edit-bar-icons(:element="element")
-          | Simple Widget
+          | Newspaper
 
       // Any html that you want to display in Design and Edit mode can go
       // here. Your widget properties may be accessed by creating a computed
       // 'getter'. See the 'style' computed property for an example.
       div(:class="myClass", :style="myStyle", @click.stop="selectThisElement")
-        | Hello world, this is a simple widget on editing/designing mode
+        | Hello world, this is a simple widget on editing/designing mode {{element.prop}}
 
     // For View (Live) mode display
     template(v-else)
       // This is the actual implementation of the widget
       // - what you want to display to the user
       .simple-widget(:class="myClass", :style="myStyle")
-        | Hello world, this is a simple widget!
+        | Hello world, this is a simple widget on editing/designing mode {{element.style}}
 </template>
 
 <script>

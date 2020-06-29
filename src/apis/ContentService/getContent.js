@@ -6,7 +6,7 @@ const url = 'https://uat.contentservice.io/api/2.0/API14ICABHVWQWVQMUTWOULMU58IX
 export const getContent = (params = {
 	type: 'post',
 	offset: 0,
-	limit: null,
+	limit: 1,
 	status: 'active-test'
 }) => {
 	console.log('params', params);

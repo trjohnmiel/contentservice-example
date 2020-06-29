@@ -1,29 +1,26 @@
 <template>
   <div id="app">
-
-    <Newsfeed />
+    <HelloWorld />
   </div>
 </template>
 
 <script>
-import Vue from 'vue'
-// import HelloWorld from "./components/HelloWorld.vue";
-import SimpleWidget from "./widgets/SimpleWidget";
-import SimpleWidgetProps from "./widgets/SimpleWidgetProps";
-import Newsfeed from './components/Newsfeed';
-
+// import Newsfeed from "./components/Newsfeed";
+import HelloWorld from './components/HelloWorld';
+import Vue from 'vue';
+import SimpleWidget from './widgets/SimpleWidget';
+import SimpleWidgetProps from './widgets/SimpleWidgetProps';
 
 export default {
   name: "App",
   components: {
-    // HelloWorld
-    Newsfeed
+    HelloWorld
+    // Newsfeed
   },
   created: function() {
-    
-    console.log('this', this);
-    console.log('this', Vue);
-    console.log('this.$content.knownElementTypes', this.$content.knownElementTypes)
+    // Toggle between view and {edit|layout|debug}
+    this.$content.setEditMode({ mode: "layout" });
+
     this.$content.registerWidget(Vue, {
       name: "simpleWidget",
       label: "Simple Widget",
@@ -45,12 +42,11 @@ export default {
         layout: {
           type: "simpleWidget",
           label: "Simple Widget",
-          children: []
-        }
-      }
+          children: [],
+        },
+      },
     });
-    
-  }
+  },
 };
 </script>
 
